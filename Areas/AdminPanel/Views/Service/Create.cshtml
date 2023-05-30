@@ -1,0 +1,44 @@
+﻿@using FinallyProject.Models;
+@model Product
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Basic form elements</h4>
+            <p class="card-description">
+                Basic form elements
+            </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="Icon" for="exampleInputName1">Icon</label>
+                    <input asp-for="Icon" type="text" class="form-control" id="exampleInputName1" placeholder="Icon">
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Description" for="exampleInputPassword4">Description</label>
+                    <input asp-for="Description"  class="form-control" id="exampleInputPassword4" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" for="exampleInputPassword4">Title</label>
+                    <input asp-for="Title"  class="form-control" id="exampleInputPassword4" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ServiceId">Service Name</label>
+                    <select>
+                        <options>
+                            @foreach(Service service in ViewBag.Services)
+                            {
+                                <options value="@service.Id">@service.Name</options>
+                            }
+                        </options>
+                    </select>
+                </div>
+
+               
+                
+              
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
